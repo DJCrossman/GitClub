@@ -26,7 +26,7 @@
       <div class="command-bar js-command-bar  ">
 
         <ul class="top-nav">
-          <li class="battle"><a href="/battle">Battle Board</a></li>
+          <li class="battle"><a href="/GitClub">Battle Board</a></li>
         </ul>
       </div>
 
@@ -35,7 +35,7 @@
 
   <ul id="user-links">
     <li>
-      <a href="/DJCrossman" class="name">
+      <a href="https://github.com/DJCrossman" class="name">
         <img height="20" src="https://1.gravatar.com/avatar/bb17cafc08254c48919d12213f117e8e?d=https%3A%2F%2Fidenticons.github.com%2Ff5852fd0e3770196c2fa0054caa9386e.png&amp;s=140" width="20"> DJCrossman
       </a>
     </li>
@@ -83,14 +83,15 @@
     	</header>
     	<div id="side">&nbsp;</div>
     	<article id="center">
+    	<div id="battle"></div>
         <div id="users"></div>
     	</article>
     	<div id="side"></div>
 	<script id="userTemplate" type="text/template">
     	  <img src="<%= avatar_url %>" alt="<%= name %>" />
-    	  <h1><%= gravatar_id %><span><%= level %></span></h1>
-    	  <div><%= email %></div>
-    	  <button id=""
+    	  <h1><%= name %></h1>&nbsp;<span>Level: <%= level %> </span>
+    	  <%= email %>
+    	  <button id="<%= id %>" type="button">Fight!</button> 
 	</script>
         <script src="js/jquery-1.7.1.min.js"></script>
 		<script src="js/json2.js"></script>

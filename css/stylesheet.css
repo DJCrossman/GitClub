@@ -1,15 +1,27 @@
 #battle {
-
+	width:556px;
+	height: 371px;
+	display: none;
+	background-image: url('../img/battle.png');
+	background-repeat: no-repeat;
 }
 #users{
 	background-color: #EEE;
 }
 .user-container {
-	border: 1px solid #333;
+	border: 1px solid #666;
 }
 .user-container img {
 	width: 40px;
-	height: 40 px;
+	height: 40px;
+	display: inline;
+	margin: 5px;
+}
+.user-container button {
+	right: 15px;
+}
+.user-container h1 {
+	display: inline;
 }
 #center {
 	width: 60%;
