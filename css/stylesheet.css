@@ -1,0 +1,21 @@
+#battle {
+
+}
+#users{
+	background-color: #EEE;
+}
+.user-container {
+	border: 1px solid #333;
+}
+.user-container img {
+	width: 40px;
+	height: 40 px;
+}
+#center {
+	width: 60%;
+	float: left;
+}
+#side {
+	width: 20%;
+	float: left;
+}

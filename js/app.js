@@ -1,81 +1,47 @@
-﻿ var UsersView = Backbone.View.extend({
-        tagName: "article",
-        className: "user-container",
-        template: _.template($("#userTemplate").html())
+﻿ (function ($) {
+ var users = [
+    { "login": "octocat1", "id": 1, "gravatar_id": "somehexcode", "url": "https://api.github.com/users/octocat", "name": "monalisa octocat", "company": "GitHub", "blog": "https://github.com/blog", "location": "San Francisco", "email": "octocat@github.com", "hireable": false, "bio": "There once was...", "public_repos": 2, "public_gists": 1, "followers": 20, "following": 0, "html_url": "https://github.com/octocat", "created_at": "2008-01-14T04:33:35Z", "type": "User" },
+    { "login": "octocat2", "id": 2, "gravatar_id": "somehexcode", "url": "https://api.github.com/users/octocat", "name": "monalisa octocat", "company": "GitHub", "blog": "https://github.com/blog", "location": "San Francisco", "email": "octocat@github.com", "hireable": false, "bio": "There once was...", "public_repos": 2, "public_gists": 1, "followers": 20, "following": 0, "html_url": "https://github.com/octocat", "created_at": "2008-01-14T04:33:35Z", "type": "User" },
+    { "login": "octocat3", "id": 3, "gravatar_id": "somehexcode", "url": "https://api.github.com/users/octocat", "name": "monalisa octocat", "company": "GitHub", "blog": "https://github.com/blog", "location": "San Francisco", "email": "octocat@github.com", "hireable": false, "bio": "There once was...", "public_repos": 2, "public_gists": 1, "followers": 20, "following": 0, "html_url": "https://github.com/octocat", "created_at": "2008-01-14T04:33:35Z", "type": "User" },
+    { "login": "octocat4", "id": 4, "gravatar_id": "somehexcode", "url": "https://api.github.com/users/octocat", "name": "monalisa octocat", "company": "GitHub", "blog": "https://github.com/blog", "location": "San Francisco", "email": "octocat@github.com", "hireable": false, "bio": "There once was...", "public_repos": 2, "public_gists": 1, "followers": 20, "following": 0, "html_url": "https://github.com/octocat", "created_at": "2008-01-14T04:33:35Z", "type": "User" }
+];
 
-        render: function () {
-            this.$el.html(this.template(this.model.toJSON()));
-            return this;
-        },
+var UserView = Backbone.View.extend({
+    tagName: "article",
+    className: "user-container",
+    template: $("#userTemplate").html(),
 
-        events: {
-        },
+    render: function () {
+        var tmpl = _.template(this.template);
+        
+        $(this.el).html(tmpl(this.model.toJSON()));
+        return this;
+    }
+});
 
-        //delete a contact
-        deleteContact: function () {
-        },
+var UsersView = Backbone.View.extend({
+el: $("#users"),
+    initialize: function () {
+        this.collection = new Users(users);
+        this.render();
 
-        //switch contact to edit mode
-        editContact: function () {
-            this.$el.html(this.editTemplate(this.model.toJSON()));
+},
 
-            //add select to set type
-            var newOpt = $("<option/>", {
-                html: "<em>Add new...</em>",
-                value: "addType"
-            });
+render: function () {
+    var that = this;
+    _.each(this.collection.models, function (item) {
+    that.renderUser(item);
+    }, this);
+},
 
-            this.select = directory.createSelect().addClass("type").val(this.$el.find("#type").val()).append(newOpt).insertAfter(this.$el.find(".name"));
-            this.$el.find("input[type='hidden']").remove();
-        },
+renderUser: function (item) {
+        var userView = new UserView({
+            model: item
+        });
+        this.$el.append(userView.render().el);
+    }
+});
+var usersView = new UsersView();
 
-        addType: function () {
-            if (this.select.val() === "addType") {
 
-                this.select.remove();
-
-                $("<input />", {
-                    "class": "type"
-                }).insertAfter(this.$el.find(".name")).focus();
-            }
-        },
-
-        saveEdits: function (e) {
-            e.preventDefault();
-
-            var formData = {},
-                prev = this.model.previousAttributes();
-
-            //get form data
-            $(e.target).closest("form").find(":input").not("button").each(function () {
-                var el = $(this);
-                formData[el.attr("class")] = el.val();
-            });
-
-            //use default photo if none supplied
-            if (formData.photo === "") {
-                delete formData.photo;
-            }
-
-            //update model
-            this.model.set(formData);
-
-            //render view
-            this.render();
-
-            //if model acquired default photo property, remove it
-            if (prev.photo === "/img/placeholder.png") {
-                delete prev.photo;
-            }
-
-            //update contacts array
-            _.each(contacts, function (contact) {
-                if (_.isEqual(contact, prev)) {
-                    contacts.splice(_.indexOf(contacts, contact), 1, formData);
-                }
-            });
-        },
-
-        cancelEdit: function () {
-        }
-    });
+} (jQuery));
