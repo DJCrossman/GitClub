@@ -23,7 +23,25 @@
 
 <?php
 
-	$con = mysql_connect("localhost:3306", "thach20n", "football");
+
+	$curl = curl_init('https://api.github.com');
+	$postData = array(
+
+			'login' => $_POST["username"],
+			'pwd' => $_POST["password"],
+			'redirect_to' => 'index.php'
+		);
+
+	curl_setopt_array($ch, array(
+    CURLOPT_URL => 'https://github.com/login',
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_POST => true,
+    CURLOPT_POSTFIELDS => $postData,
+    CURLOPT_FOLLOWLOCATION => true
+	));
+
+
+/*	$con = mysql_connect("localhost:3306", "thach20n", "football");
 	if (!$con)
 	{
 		dir('could not connect' . mysql_error());
@@ -48,6 +66,6 @@
 	}
 
 	ob_end_flush();
-
+*/
 
 ?>
