@@ -10,8 +10,8 @@ document.getElementById("demo").innerHTML=Date();
 </head>
 <body>
 
-<h1>My First JavaScript</h1>
-<p id="demo">This is a paragraph.</p>
+<h1>zzz</h1>
+<p id="demo">zzz</p>
 
 <button type="button" onclick="displayDate()">Display Date</button>
 
