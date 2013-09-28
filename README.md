@@ -1,4 +1,4 @@
 GitClub
 =======
 
-Commit to being a better program. Fight other developers using the power of code.
+Commit to being a better programmer. Fight other developers using the power of code.
