@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 ?>
 <!DOCTYPE html>
@@ -115,3 +116,5 @@
     </body>
 </html>
 </html>
+=======
+>>>>>>> login
