@@ -8,7 +8,7 @@
 
 	<p id="sidWarning"></p>	
 	<p>
-		{{Form::text('id', '', array('placeholder'=>'Student ID'))}}
+		{{Form::text('id', '', array('placeholder'=>'username'))}}
 
 	</p>
 	<p id="passwordWarning"></p>
