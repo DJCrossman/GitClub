@@ -20,4 +20,29 @@ class HomeController extends BaseController {
 		return View::make('hello');
 	}
 
+
+	public function getLogin()
+	{
+		return View::make('login');
+	}
+
+	public function postLogin(){
+		$input = Input::all();
+		$rules = array('id' => 'required','password' =>'required');
+		$v = Validator::make($input,$rules);
+
+		if($v->fails()){
+			return Redirect::to('login')->withErrors($v);
+		}else {
+			$credentials = array('id'=> $input['id'], 'password' => $input['password']);
+
+			if(Auth::attempt($credentials)){
+				return Redirect::to('/');
+			}else{
+				return Redirect::to('login')->withInput()->withErrors('Invalid User And/Or Password');
+			}
+		}
+	}
+
+
 }
