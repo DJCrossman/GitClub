@@ -19,6 +19,7 @@ var User = Backbone.Model.extend({
 	  "html_url": "https://github.com/octocat",
 	  "created_at": "2008-01-14T04:33:35Z",
 	  "type": "User",
+	  "status": "",
 	  "level": 1
 	}
 });

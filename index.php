@@ -76,17 +76,34 @@
 
 </div>
 
-
-    
   </div>
 </div>
     	</header>
     	<div id="side">&nbsp;</div>
     	<article id="center">
-    	<div id="battle"></div>
+    	<div id="battle-container">
+    	<div id="side">&nbsp;</div>
+		<div id="battle">
+			<div id="battle-name"></div>
+			<div id="user-name"></div>
+			<div id="moves">
+			<table>
+				<tr>
+					<td><a href="/attack">Attack</a></td>
+					<td><a href="/repo">Change Repo</a></td>
+				</tr>
+				<tr>
+					<td><a href="/run">Run</a></td>
+					<td>&nbsp;</td>
+				</tr>
+			</table>
+			</div>
+		</div>
+    	<div id="side">&nbsp;</div>
+    	</div><br/>
         <div id="users"></div>
     	</article>
-    	<div id="side"></div>
+    	<div id="side">&nbsp;</div>
 	<script id="userTemplate" type="text/template">
     	  <img src="<%= avatar_url %>" alt="<%= name %>" />
     	  <h1><%= name %></h1>&nbsp;<span>Level: <%= level %> </span>

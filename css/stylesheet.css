@@ -1,9 +1,43 @@
+#battle-container {
+	float: top;
+	min-height: 371px;
+	background-color: #EEE;
+	color: #000000;
+}
 #battle {
-	width:556px;
-	height: 371px;
+	min-height: 371px;
+	color: #000000;
 	display: none;
 	background-image: url('../img/battle.png');
 	background-repeat: no-repeat;
+}
+#user-name {
+	padding-top: 115px;
+	padding-left: 340px;
+	z-index: 30;
+	text-align: left;
+	position: inherit;
+	color: #000000;
+}
+#battle-name {
+	padding-top: 50px;
+	padding-left: 45px;
+	text-align: left;
+	position: inherit;
+	color: #000000;
+}
+#moves {
+	padding-top: 100px;
+	position: inherit;
+	text-align: center;
+	color: #000000;
+}
+#battle td {
+	width: 150px;
+	color: #000000;
+}
+#battle a {
+	color: #000000;
 }
 #users{
 	background-color: #EEE;
@@ -30,4 +64,9 @@
 #side {
 	width: 20%;
 	float: left;
+}
+form
+{
+	margin: 50px 0px 0px 200px;
+	position: inherit;
 }
