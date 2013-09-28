@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 ?>
 <!DOCTYPE html>
@@ -7,13 +8,14 @@
         <title>GitClub</title>
         <link rel="stylesheet" href="https://github.global.ssl.fastly.net/assets/github-4288f026700410ae032b5d324dea2b4571789d7c.css" />
         <link rel="stylesheet" href="https://github.global.ssl.fastly.net/assets/github2-88d5087029dbe346f413843c4cb0149921840ef5.css" />
+    	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
     </head>
     <body>
     	<header>
     		<div class="header header-logged-in true">
   <div class="container clearfix">
 
-    <a class="header-logo-invertocat" href="https://github.com/">
+    <a class="header-logo-invertocat" href="http://hack.djcrossman.com/">
   <span class="mega-octicon octicon-mark-github"></span>
 </a>
 
@@ -23,24 +25,9 @@
 </a>
 
       <div class="command-bar js-command-bar  ">
-          <form accept-charset="UTF-8" action="/search" class="command-bar-form" id="top_search_form" method="get">
 
-<input type="text" data-hotkey="/ s" name="q" id="js-command-bar-field" placeholder="Search or type a command" tabindex="1" autocapitalize="off" data-username="DJCrossman">
-
-
-  <span class="octicon help tooltipped downwards" original-title="Show command bar help">
-    <span class="octicon octicon-question"></span>
-  </span>
-
-
-  <input type="hidden" name="ref" value="cmdform">
-
-</form>
         <ul class="top-nav">
-          <li class="explore"><a href="/explore">Explore</a></li>
-            <li><a href="https://gist.github.com">Gist</a></li>
-            <li><a href="/blog">Blog</a></li>
-          <li><a href="https://help.github.com">Help</a></li>
+          <li class="battle"><a href="/battle">Battle Board</a></li>
         </ul>
       </div>
 
@@ -95,23 +82,25 @@
   </div>
 </div>
     	</header>
-    	<article>
+    	<div id="side">&nbsp;</div>
+    	<article id="center">
+        <div id="users"></div>
     	</article>
-        <div id="contacts"></div>
-	<script id="contactTemplate" type="text/template">
-    	  <img src="<%= photo %>" alt="<%= name %>" />
-    	  <h1><%= name %><span><%= type %></span></h1>
-    	  <div><%= address %></div>
-    	  <dl>
-        	<dt>Tel:</dt><dd><%= tel %></dd>
-        	<dt>Email:</dt><dd><a href="mailto:<%= email %>"><%= email %></a></dd>
-	  </dl>
+    	<div id="side"></div>
+	<script id="userTemplate" type="text/template">
+    	  <img src="<%= avatar_url %>" alt="<%= name %>" />
+    	  <h1><%= gravatar_id %><span><%= level %></span></h1>
+    	  <div><%= email %></div>
+    	  <button id=""
 	</script>
         <script src="js/jquery-1.7.1.min.js"></script>
-	<script src="js/json2.js"></script>
-        <script src="js/Underscore-min.js"></script>
-        <script src="js/Backbone-min.js"></script>
+		<script src="js/json2.js"></script>
+        <script src="js/underscore-min.js"></script>
+        <script src="js/backbone-min.js"></script>
+        <script type="text/javascript" src="js/models.js"></script>
         <script src="js/app.js"></script>
     </body>
 </html>
 </html>
+=======
+>>>>>>> login
